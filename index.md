@@ -1,4 +1,5 @@
 ![IES-logo](IES-logo.jpg)
+
 Hacking <em>Moby-Dick</em>
 
 *   [About](cmohge1/hacking-moby-dick/docs/about)
