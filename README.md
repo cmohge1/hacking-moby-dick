@@ -2,7 +2,9 @@
 
 This is the official repository for "Hacking Moby-Dick" seminar series at the Institute of English Studies, School of Advanced Study, University of London.
 
-To access the list of digital resources, [click here](hacking_m-d_resources.html).
+To access the blog version, [click here](https://cmohge1.github.io/hacking-moby-dick/)
+
+To access the list of digital resources, [click here](hacking_m-d_resources.pdf).
 
 ### Rough plan
 
