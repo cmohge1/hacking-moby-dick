@@ -17,27 +17,37 @@ Brief Introduction to Voyant Tools.
 
 #### Week 2 (24 April):
 
-Using Voyant tools for 'distant reading'.
+Digital demo: Using Voyant tools for 'distant reading'; using Melville Electronic Library's *Moby-Dick* to read a 'fluid text'.
 
 Read/discuss: Eytmology, Extracts, and Chapters 1–15.
 
 #### Week 3 (1 May):
 
+Digital demo: how to use *Melville's Marginalia Online*.
+
 Read/discuss: Chapters 16–35
 
 #### Week 4 (8 May)
+
+Digital demo: how to use *Melville's Marginalia Online*, continued.
 
 Read/discuss: Chapters 36–55
 
 #### Week 5 (15 May)
 
+Digital demo: how to use AntConc for literary texts.
+
 Read/discuss: Chapter 56–75
 
 #### Week 6 (22 May)
 
+Digital demo: how to use R to analyse and visualise textual data.
+
 Read/discuss: Chapters 76–95
 
 #### Week 7 (29 May)
+
+Digital demo: how to use R to analyse and visualise textual data, continued.
 
 Read/discuss: Chapters 96–115
 
