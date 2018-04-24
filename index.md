@@ -2,6 +2,7 @@
 
 Hacking <em>Moby-Dick</em>
 ==========================
+![m-d-image](m-d-image.jpg)
 
 This is an experimental seminar series at the Institute of English Studies on how to apply digital approaches to literature. We'll be focusing on _Moby-Dick_. Stay tuned as we compile material over the months of April, May, and June.
 
@@ -15,13 +16,13 @@ Introductions; how *Moby-Dick* was made, and how the British edition differs fro
 
 Brief Introduction to Voyant Tools.
 
-#### Week 2 (24 April):
-
-Access the [Discussion Page](week_2_discussion.md)
+#### [Week 2 (24 April):](week_2_discussions.md)
 
 Digital demo: Using Voyant tools for 'distant reading'; using Melville Electronic Library's *Moby-Dick* to read a 'fluid text'.
 
 Read/discuss: Eytmology, Extracts, and Chapters 1–15.
+
+Access the [Discussion Page](week_2_discussions.md).
 
 #### Week 3 (1 May):
 

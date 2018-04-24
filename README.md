@@ -1,5 +1,7 @@
 ![IES-logo](IES-logo.jpg)
 
+![m-d-image](m-d-image.jpg)
+
 ## Hacking *Moby-Dick*
 
 This is the official repository for "Hacking Moby-Dick" seminar series at the Institute of English Studies, School of Advanced Study, University of London.
