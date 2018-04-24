@@ -17,6 +17,8 @@ Brief Introduction to Voyant Tools.
 
 #### Week 2 (24 April):
 
+Access the [Discussion Page](week_2_discussion.md)
+
 Digital demo: Using Voyant tools for 'distant reading'; using Melville Electronic Library's *Moby-Dick* to read a 'fluid text'.
 
 Read/discuss: Eytmology, Extracts, and Chapters 1–15.
