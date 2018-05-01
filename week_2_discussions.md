@@ -1,3 +1,5 @@
+[Return to the Home page](index.md)
+
 ## Hacking *Moby-Dick*, Week 2
 
 ### Passages Discussed
@@ -50,3 +52,5 @@ But no more of this blubbering now, we are going a-whaling,
 and there is plenty of that yet to come. Let us scrape the ice
 from our frosted feet, and see what sort of a place this “Spouter”
 may be.
+
+*From Chapter 7:*
