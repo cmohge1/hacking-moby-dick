@@ -16,6 +16,8 @@ Introductions; how *Moby-Dick* was made, and how the British edition differs fro
 
 Brief Introduction to Voyant Tools.
 
+[Access the Voyant visualisation of *Moby-Dick*](https://voyant-tools.org/?corpus=74246b1121291d00837d6841b78fb0b1&panels=cirrus,termsberry,trends,summary,contexts)
+
 #### [Week 2 (24 April):](week_2_discussions.md)
 
 Digital demo: Using Voyant tools for 'distant reading'; using Melville Electronic Library's *Moby-Dick* to read a 'fluid text'.
