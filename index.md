@@ -24,11 +24,13 @@ Read/discuss: Eytmology, Extracts, and Chapters 1–15.
 
 Access the [Discussion Page](week_2_discussions.md).
 
-#### Week 3 (1 May):
+#### [Week 3 (1 May):](week_3_discussions.md)
 
 Digital demo: how to use *Melville's Marginalia Online*.
 
 Read/discuss: Chapters 16–35
+
+Access the [Discussion Page](week_3_discussions.md)
 
 #### Week 4 (8 May)
 
