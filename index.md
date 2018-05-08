@@ -34,11 +34,13 @@ Read/discuss: Chapters 16–35
 
 Access the [Discussion Page](week_3_discussions.md)
 
-#### Week 4 (8 May)
+#### [Week 4 (8 May)](week_4_discussions.md)
 
 Digital demo: how to use *Melville's Marginalia Online*, continued.
 
 Read/discuss: Chapters 36–55
+
+Access the [Discussion Page](week_4_discussions.md)
 
 #### Week 5 (15 May)
 
