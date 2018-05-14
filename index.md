@@ -42,11 +42,13 @@ Read/discuss: Chapters 36–55
 
 Access the [Discussion Page](week_4_discussions.md)
 
-#### Week 5 (15 May)
+#### [Week 5 (15 May)](week_5_discussions.md)
 
 Digital demo: how to use AntConc for literary texts.
 
 Read/discuss: Chapter 56–75
+
+Access the [Discussion Page](week_5_discussions.md)
 
 #### Week 6 (22 May)
 
