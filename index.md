@@ -44,15 +44,13 @@ Access the [Discussion Page](week_4_discussions.md)
 
 #### [Week 5 (15 May)](week_5_discussion.md)
 
-Digital demo: how to use AntConc for literary texts.
-
 Read/discuss: Chapter 56–75
 
 Access the [Discussion Page](week_5_discussion.md)
 
 #### [Week 6 (22 May)](week_6_discussion.md)
 
-Digital demo: how to use R to analyse and visualise textual data.
+Digital demo: how to use AntConc for literary texts.
 
 Read/discuss: Chapters 76–95
 
@@ -60,7 +58,7 @@ Access the [Discussion Page](week_6_discussion.md)
 
 #### Week 7 (29 May)
 
-Digital demo: how to use R to analyse and visualise textual data, continued.
+Digital demo: how to use R to analyse and visualise textual data.
 
 Read/discuss: Chapters 96–115
 
