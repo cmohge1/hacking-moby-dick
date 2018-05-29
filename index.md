@@ -56,7 +56,7 @@ Read/discuss: Chapters 76–95
 
 Access the [Discussion Page](week_6_discussion.md)
 
-#### Week 7 (29 May)
+#### [Week 7 (29 May)](week_7_discussion.md)
 
 Digital demo: how to use R to analyse and visualise textual data.
 
