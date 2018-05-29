@@ -6,7 +6,7 @@
 
 First, a demo on using R to run a sentiment analysis of *Moby-Dick*.
 
-[Enter the R document.](moby-dick-sentiment.Rmd)
+[Enter the R document.](moby-dick-sentiment.html)
 
 ***
 
