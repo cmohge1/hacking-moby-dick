@@ -1,0 +1,108 @@
+---
+title: "Moby-dick-senitment"
+author: "cmo"
+date: "29/05/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+### Enter R Markdown 
+
+What you're reading is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+After loading the right libraries
+
+library(XML)
+
+library(tidytext)
+
+library(dplyr)
+
+library(stringr)
+
+library(glue)
+
+library(tidyverse)
+
+library(wordcloud)
+
+library(reshape2)
+
+```{r, include=FALSE}
+setwd("~/Desktop/git-space/hacking-moby-dick/") #Here you'll want to use the proper path to where your moby-dick.txt file lives, so if you download it to your desktop, your path would be something like "~/Desktop/moby-dick.txt"
+library(XML)
+library(tidytext)
+library(dplyr)
+library(stringr)
+library(glue)
+library(tidyverse)
+library(wordcloud)
+library(reshape2)
+```
+
+we then created a data frame that loads the text file of the markings. The argument of the code block gives instructions for taking each word in the text file and making each word a numbered item in the data frame (think of a table of individual words)...
+```{r}
+words <- data_frame(file = paste0("~/Desktop/git-space/hacking-moby-dick/", 
+                                        c("moby-dick.txt"))) %>%
+  mutate(text = map(file, read_lines)) %>%
+  unnest() %>%
+  group_by(file = str_sub(basename(file), 1, -5)) %>%
+  mutate(line_number = row_number()) %>%
+  ungroup() %>%
+  unnest_tokens(word, text)
+```
+
+With the data frame created, it is easy to run an inner_join argument to run each word against a dictionary of sentiment words and their attendant values.
+```{r}
+words_sentiment <- inner_join(words,
+                              get_sentiments("bing")) %>%
+  count(file, index = round(line_number/ max(line_number) * 100 / 5) * 5, sentiment) %>%
+  spread(sentiment, n, fill = 0) %>%
+  mutate(net_sentiment = positive - negative)
+```
+
+Create a plot of results.
+```{r}
+words_sentiment %>% ggplot(aes(x = index, y = net_sentiment, fill = file)) + 
+  geom_bar(stat = "identity", show.legend = FALSE) + 
+  facet_wrap(~ file) + 
+  scale_x_continuous("Location in Moby-Dick") + 
+  scale_y_continuous("Bing net Sentiment")
+```
+
+This plot is interesting, but it doesn't quite serve our ultimate purpose. We want to see the word frequencies of positive and negative words. 
+
+```{r}
+bing_word_counts <- words %>%
+  inner_join(get_sentiments("bing")) %>%
+  count(word, sentiment, sort = TRUE) %>%
+  ungroup()
+  
+
+bing_word_counts %>%
+  group_by(sentiment) %>%
+  top_n(20) %>%
+  ungroup() %>%
+  mutate(word = reorder(word, n)) %>%
+  ggplot(aes(word, n, fill = sentiment), col) +
+  geom_col(show.legend = FALSE) +
+  facet_wrap(~sentiment, scales = "free_y") +
+  labs(y = "Sentiment Words in Moby-Dick",
+       x = NULL) +
+  coord_flip()
+```
+
+The first code block counts the sentiment words, and the second groups the words according to their respective categories. This graph tells us much more information, but it could be misleading; if we produce a wordcloud of the entire corpus of sentiment words, we can see that there are more negative words than positive ones. 
+
+```{r}
+words %>%
+  inner_join(get_sentiments("bing")) %>%
+  count(word, sentiment, sort = TRUE) %>%
+  acast(word ~ sentiment, value.var = "n", fill = 0) %>%
+  comparison.cloud(max.words = 775, scale = c(1.5,.3), 
+                   random.order = FALSE,
+                   colors = c("red", "blue"))
+```
