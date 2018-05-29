@@ -12,4 +12,8 @@ First, a demo on using digital resources to understand Melville's use of Thomas 
 
 3. Open AntConc and select File > Open File(s). Select the *Moby-Dick* and Beale text files you just downloaded.
 
-4. Select Concordance on AntConc's interface. Select a search term (we started with "whale"), then click "Start".
+4. Select Concordance on AntConc's interface. Select a search term (we start with "whale", naturally), then click "Start".
+
+***
+
+Passages Discussed.
