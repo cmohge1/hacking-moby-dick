@@ -4,6 +4,7 @@ author: "cmo"
 date: "29/05/2018"
 output: html_document
 ---
+Return to [Week 7](https://cmohge1.github.io/hacking-moby-dick/week_7_discussion.html).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -106,3 +107,5 @@ words %>%
                    random.order = FALSE,
                    colors = c("red", "blue"))
 ```
+
+Return to [Week 7](https://cmohge1.github.io/hacking-moby-dick/week_7_discussion.html).

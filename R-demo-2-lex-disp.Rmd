@@ -4,6 +4,7 @@ author: "cmo"
 date: "6/5/2018"
 output: html_document
 ---
+Return to [Week 8](https://cmohge1.github.io/hacking-moby-dick/week_8_discussion.html).
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
@@ -45,4 +46,4 @@ What kinds of questions can you generate from the placement of these words?
 
 Now try to change the search terms.
 
-Return to [Week 8](week_8_discussion.md).
+Return to [Week 8](https://cmohge1.github.io/hacking-moby-dick/week_8_discussion.html).
