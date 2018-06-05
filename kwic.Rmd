@@ -1,0 +1,162 @@
+---
+title: "Key Word in Context app"
+author: "cmo"
+date: "05/06/2018"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Build a Key-word-in-context application
+
+As we have seen, the sentiment results and the lexical dispersion plot only generate more questions about the text (which is a good thing). Of course these computational approaches should inevtibaly lead us back to closely reading the text, but even in that endeavour we can solicit the aid of R by creating a key-word-in-context search. Let's undertake a key-word-in-context search of Moby-Dick.
+
+```{r}
+setwd("~/Desktop/git-space/hacking-moby-dick/")
+library(dplyr)
+
+input.dir <- "texts/" #notice here that I migrated my moby-dick.txt into a sub-directory called "texts" for ease of processing and organization
+file.v <- dir(input.dir, "moby-dick.txt")
+file.v
+
+# Function takes a vector of file names and a directory path and
+# returns a list in which each item in the list is an ordered
+# vector of words from one of the files in the vector of file names 
+
+make.file.word.v.l <- function(file.v, input.dir){
+  text.word.vector.l <- list()
+  # loop over the files
+  for(i in 1:length(file.v)){
+    # read the file in (notice that it is here that we need to know the input # directory
+    text.v <- scan(paste(input.dir, file.v[i], sep="/"),
+                   what="character", sep="\n") #convert to single string
+    text.v <- paste(text.v, collapse=" ")
+    #lowercase and split on non-word characters
+    text.lower.v <- tolower(text.v)
+    text.words.v <- strsplit(text.lower.v, "\\W")
+    text.words.v <- unlist(text.words.v)
+    #remove the blanks
+    text.words.v <- text.words.v[which(text.words.v!="")]
+    #use the index id from the files.v vector as the "name" in the list 
+    text.word.vector.l[[file.v[i]]] <- text.words.v
+  }
+  return(text.word.vector.l)
+}
+# call the function with file.v and input.dir, put into new variable
+my.corpus.l <- make.file.word.v.l(file.v, input.dir)
+#show the first 100 words of the corpus
+my.corpus.l[[1]][1:100]
+```
+
+I have run a complicated for-loop that iterates over the words in the text file, separates them properly, and puts them in a vector (an ordered list). Now we can simply create new vectors that seek out a search term.
+
+```{r}
+#search and find positions of word
+great.positions.v <- which(my.corpus.l[[1]][]=="great")
+great.positions.v
+```
+This might look intimidating, but this shows you exactly in what position in the list these terms are occuring.
+
+```{r}
+great.context <- great.positions.v
+context <- 4
+results <- for(i in 1:length(great.context)){
+  start <- great.context[i]-context
+  end <- great.context[i]+context
+  before <- my.corpus.l[[1]][start:(start+context-1)]
+  after <- my.corpus.l[[1]][(start+context+1) :end]
+  keyword <- my.corpus.l[[1]][start+context]
+  cat("----------", i, "----------", "\n")
+  cat(before,"[",keyword, "]", after, "\n")
+}
+```
+
+Suppose we want to combine terms with great---say, with some other negative terms from the sentiment analysis.
+
+```{r}
+death.positions.v <- which(my.corpus.l[[1]][]=="death")
+dead.positions.v <- which(my.corpus.l[[1]][]=="dead")
+dark.positions.v <- which(my.corpus.l[[1]][]=="dark")
+# now combine the three search-placement vectors into one wit the 'c' combine function
+dark.words.md <- (c(death.positions.v, dead.positions.v, dark.positions.v))
+
+dark.words.context <- dark.words.md
+context <- 4 # here you can adjust the context
+results <- for(i in 1:length(dark.words.context)){
+  start <- dark.words.context[i]-context
+  end <- dark.words.context[i]+context
+  before <- my.corpus.l[[1]][start:(start+context-1)]
+  after <- my.corpus.l[[1]][(start+context+1) :end]
+  keyword <- my.corpus.l[[1]][start+context]
+  cat("----------", i, "----------", "\n")
+  cat(before,"[",keyword, "]", after, "\n")
+}
+```
+What if you want to identify the first instance of "death"?
+
+```{r}
+first.death <- death.positions.v[1]
+my.corpus.l[[1]][first.death]
+#grab words before and after 1st 'death' instances and use cat to pretty print
+cat(my.corpus.l[[1]] [(first.death-2):(first.death+2)])
+```
+
+```{r}
+# What about the last 'death'?
+last.death <- last(death.positions.v)
+my.corpus.l[[1]][last.death]
+cat(my.corpus.l[[1]] [(last.death-2):(last.death+2)])
+```
+
+Now for the difficult part. Try putting in this code block into RStudio. You should be able to run your own key-word-search-in-context application.
+```
+# This creates a function to take a list containing word vector # from text files and allows for interactive user input to produce KWIC lists 
+doitKwic <- function(named.text.word.vector.l){
+show.files(names(named.text.word.vector.l)) 
+  # ask the user for three bits of information 
+  file.id <- as.numeric(readline(
+"Which file would you like to examine? Enter a file number: \n")) 
+  context <- as.numeric(readline(
+  "How much context do you want to see? Enter a number: \n")) 
+  keyword <- tolower((readline("Enter a keyword: \n")))
+  hits.v <- which(named.text.word.vector.l[[file.id]] == keyword) 
+  if(length(hits.v)>0){
+    result <- NULL
+    for(h in 1:length(hits.v)){
+      start <- hits.v[h]-context
+      if(start < 1){
+        start <- 1 }
+      end <- hits.v[h]+context
+      cat("\n-----------------------", h, "-------------------------\n") 
+      cat(named.text.word.vector.l[[file.id]][start:(hits.v[h]-1)], sep=" ") 
+      cat(" [", named.text.word.vector.l[[file.id]][hits.v[h]],"] ", sep="") 
+      cat(named.text.word.vector.l[[file.id]][(hits.v[h]+1):end], sep=" ")
+      myrow <- cbind(hits.v[h], 
+          paste(named.text.word.vector.l[[file.id]][start:(hits.v[h]-1)],
+                                      collapse=" "), 
+          paste(named.text.word.vector.l[[file.id]][hits.v[h]],
+                                      collapse=" "), 
+          paste(named.text.word.vector.l[[file.id]][(hits.v[h]+1):end],
+                                      collapse=" "))
+      result <- rbind(result,myrow)
+    }
+    colnames(result) <- c("position", "left", "keyword", "right") 
+    toprint <- as.numeric((
+      readline("Would you like to save this result to a file: enter 1=yes or 0=no \n")))
+    if(toprint==1){
+      write.csv(result,
+                paste("search-results/", keyword,"_In_",
+                      context, names(named.text.word.vector.l)[file.id], ".csv", sep="")) 
+      }
+  } else {
+    cat("YOUR KEYWORD WAS NOT FOUND\n")
+  }
+}
+doitKwic(my.corpus.l)
+```
+
+This tutorial is adapted from Matthew Jockers's [*Text Analysis in R for Students of Literature*](http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/) (2014).
+
+Return to [Week 8](https://cmohge1.github.io/hacking-moby-dick/week_8_discussion.html)
