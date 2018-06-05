@@ -32,7 +32,7 @@ library(wordcloud)
 library(reshape2)
 
 ```{r, include=FALSE}
-setwd("~/Desktop/git-space/hacking-moby-dick/") #Here you'll want to use the proper path to where your moby-dick.txt file lives, so if you download it to your desktop, your path would be something like "~/Desktop/moby-dick.txt"
+setwd("~/git-space/hacking-moby-dick/") #Here you'll want to use the proper path to where your moby-dick.txt file lives, so if you download it to your desktop, your path would be something like "~/Desktop/moby-dick.txt"
 library(XML)
 library(tidytext)
 library(dplyr)
@@ -45,7 +45,7 @@ library(reshape2)
 
 we then created a data frame that loads the text file of the markings. The argument of the code block gives instructions for taking each word in the text file and making each word a numbered item in the data frame (think of a table of individual words)...
 ```{r}
-words <- data_frame(file = paste0("~/Desktop/git-space/hacking-moby-dick/", 
+words <- data_frame(file = paste0("~/git-space/hacking-moby-dick/", 
                                         c("moby-dick.txt"))) %>%
   mutate(text = map(file, read_lines)) %>%
   unnest() %>%

@@ -11,3 +11,7 @@ First, a demo on using R to run a sentiment analysis of *Moby-Dick*.
 ***
 
 Passages Discussed.
+
+Ch 99, "The Doubloon".
+
+Ch. 100, "The Carpenter".
