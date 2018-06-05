@@ -16,6 +16,6 @@ Another R demo: build a key-word-in-context search.
 
 To learn more about R, I would suggest starting with this helpful [tutorial by Jeff Rydberg-Cox](https://daedalus.umkc.edu/StatisticalMethods/index.html).
 
-Then I would work through Matthew Jockers's []*Text Analysis in R for Students of Literature*](http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/) (2014).
+Then I would work through Matthew Jockers's [*Text Analysis in R for Students of Literature*](http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/) (2014).
 
 Finally, the [R WikiBook](https://en.wikibooks.org/wiki/R_Programming) and [R home page]() are loaded with good information.
