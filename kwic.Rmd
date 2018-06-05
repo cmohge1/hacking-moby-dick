@@ -161,7 +161,11 @@ It will first ask for a file number. Since there is only one file number, enter 
 
 It will then ask for how much context you would like. I enter '4'.
 
-Then, if we enter a term from our sentiment list, 'grand', the results are:
+Then, if we enter a term from our sentiment list, 'grand', you will see the results.
+
+But remember: the application also asks if you would like to save your results in a csv file. This turns out to be very important if you are organising data about, say, certain sentiment words in their context.
+
+Here are the results:
 
 ----------------------- 1 -------------------------
 a sea ibid the [mighty] whales which swim in
