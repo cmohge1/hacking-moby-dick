@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE)
 
 ## Create a lexical dispersion plot based on the sentiment word results
 
-First you need set your working directory (for me, that is setwd("~/git-space/ranalysis/texts/")). 
+First you need set your working directory (for me, that is setwd("~/git-space/hacking-moby-dick/")). 
 
 Then you load two libraries:
 
@@ -20,30 +20,29 @@ library("rJava")
 library("qdap")
 
 ```{r include=FALSE}
-
 setwd("~/git-space/hacking-moby-dick/")
 library("rJava")
 library("qdap")
 ```
 
-Next you will prepare the text, making sure all of the charcater encoding is uniform.
+Next you will load the text.
 
 ```{r}
 md.text <- scan("moby-dick.txt", what = "characters", sep = "\n")
-md.text <- iconv(md.text, "latin1", "ASCII", "")
-md.text <- paste(md.text, collapse = c(" ", "\n"))
-md.text.prep <- qprep(md.text)
-md.text.prep <- replace_contraction(md.text)
-md.text.stripped <- strip(md.text.prep, char.keep = c("?", "."))
 ```
+
+Now we just run a dispersion_plot function that finds select terms and places them in relation to each other in the space of the text. You can type in whichever terms you would like to map by changing them in the "c" (combine) function.
+
 ```{r}
-dispersion_plot(md.text, c("poor", "strange", "dead", "death", "whale", "ahab", "great", "well", "good", "right", "best", "work"),
+dispersion_plot(md.text, c("poor", "strange", "dead", "death", "wild", "dark", "whale", "ahab", "great", "well", "good", "right", "best", "work"),
                 color = "black", bg.color = "grey90", horiz.color = "grey85",
                 total.color = "black", symbol = "|", title = "Lexical Dispersion Plot in Moby-Dick",
                 rev.factor = TRUE, wrap = "'", xlab = NULL, ylab = "Word Frequencies",
-                size = 4, plot = TRUE)
+                size = 3, plot = TRUE)
 ```
 
 What kinds of questions can you generate from the placement of these words?
 
 Now try to change the search terms.
+
+Return to [Week 8](week_8_discussion.md).

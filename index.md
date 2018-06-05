@@ -62,7 +62,7 @@ Digital demo: how to use R to analyse and visualise textual data.
 
 Read/discuss: Chapters 96–115
 
-#### Week 8 (5 June)
+#### [Week 8 (5 June)](week_8_discussion.md)
 
 Read/discuss: Chapters 116–Epilogue
 

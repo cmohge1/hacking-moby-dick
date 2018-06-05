@@ -15,3 +15,5 @@ Passages Discussed.
 Ch 99, "The Doubloon".
 
 Ch. 100, "The Carpenter".
+
+Ch. 106, "Ahab's Leg".
