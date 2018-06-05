@@ -1551,7 +1551,7 @@ my.corpus.l[[1]][last.death]</code></pre>
 <pre><code>## [1] &quot;death&quot;</code></pre>
 <pre class="r"><code>cat(my.corpus.l[[1]] [(last.death-2):(last.death+2)])</code></pre>
 <pre><code>## in his death gasp kept</code></pre>
-<p>Now for the difficult part. Try putting in this code block into RStudio. You should be able to run your own key-word-search-in-context application.</p>
+<p>Now for the fun part. Copy and paste this code block into RStudio. You should be able to run your own key-word-search-in-context application.</p>
 <pre><code># This creates a function to take a list containing word vector # from text files and allows for interactive user input to produce KWIC lists 
 doitKwic &lt;- function(named.text.word.vector.l){
 show.files(names(named.text.word.vector.l)) 
@@ -1594,8 +1594,60 @@ show.files(names(named.text.word.vector.l))
     cat(&quot;YOUR KEYWORD WAS NOT FOUND\n&quot;)
   }
 }
+
 doitKwic(my.corpus.l)</code></pre>
-<p>This tutorial is adapted from Matthew Jockers’s <a href="http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/"><em>Text Analysis in R for Students of Literature</em></a> (2014).</p>
+<p>It will first ask for a file number. Since there is only one file number, enter ‘1’.</p>
+<p>It will then ask for how much context you would like. I enter ‘4’.</p>
+<p>Then, if we enter a term from our sentiment list, ‘grand’, the results are:</p>
+<p>———————– 1 ————————- a sea ibid the [mighty] whales which swim in</p>
+<p>———————– 2 ————————- whale boat suddenly a [mighty] mass emerged from the</p>
+<p>———————– 3 ————————- euroclydon nevertheless is a [mighty] pleasant zephyr to any</p>
+<p>———————– 4 ————————- good laugh is a [mighty] good thing and rather</p>
+<p>———————– 5 ————————- smallest strands in the [mighty] cable of the scriptures</p>
+<p>———————– 6 ————————- far rush of the [mighty] whale which even now</p>
+<p>———————– 7 ————————- this struck me as [mighty] singular yet upon second</p>
+<p>———————– 8 ————————- nation s census a [mighty] pageant creature formed for</p>
+<p>———————– 9 ————————- bildad might have a [mighty] deal to say about</p>
+<p>———————– 10 ————————- than the high and [mighty] business of whaling one</p>
+<p>———————– 11 ————————- mother of that now [mighty] colony moreover in the</p>
+<p>———————– 12 ————————- our leviathan who but [mighty] job and who composed</p>
+<p>———————– 13 ————————- in one of the [mighty] triumphs given to a</p>
+<p>———————– 14 ————————- of an enraged and [mighty] man but were the</p>
+<p>———————– 15 ————————- who in all thy [mighty] earthly marchings ever cullest</p>
+<p>———————– 16 ————————- overbearing dignity of some [mighty] woe ere long from</p>
+<p>———————– 17 ————————- and there s a [mighty] difference between a living</p>
+<p>———————– 18 ————————- a leech till the [mighty] brute is worried to</p>
+<p>———————– 19 ————————- of the high and [mighty] cabin in strange contrast</p>
+<p>———————– 20 ————————- for a parmacetty and [mighty] quick captain ahab and</p>
+<p>———————– 21 ————————- pregnant with many a [mighty] birth no wonder then</p>
+<p>———————– 22 ————————- and fearless as this [mighty] steed whether marching amid</p>
+<p>———————– 23 ————————- to preserve all his [mighty] swells and undulations and</p>
+<p>———————– 24 ————————- the assault yes a [mighty] change had come over</p>
+<p>———————– 25 ————————- hoary with mosses speak [mighty] head and tell us</p>
+<p>———————– 26 ————————- in thinking how this [mighty] monster is actually a</p>
+<p>———————– 27 ————————- leviathan is of so [mighty] a magnitude all his</p>
+<p>———————– 28 ————————- whale this high and [mighty] god like dignity inherent</p>
+<p>———————– 29 ————————- all things that are [mighty] wears a false brow</p>
+<p>———————– 30 ————————- his men in a [mighty] rage that was a</p>
+<p>———————– 31 ————————- drawn off from some [mighty] fountain and with half</p>
+<p>———————– 32 ————————- our conceit of the [mighty] misty monster to behold</p>
+<p>———————– 33 ————————- more i consider this [mighty] tail the more do</p>
+<p>———————– 34 ————————- dark valley between three [mighty] heaven abiding peaks that</p>
+<p>———————– 35 ————————- hummed around him the [mighty] idler seemed the cunning</p>
+<p>———————– 36 ————————- its length was the [mighty] circular basket of ribs</p>
+<p>———————– 37 ————————- fossil whale from his [mighty] bulk the whale affords</p>
+<p>———————– 38 ————————- bulk to produce a [mighty] book you must choose</p>
+<p>———————– 39 ————————- you must choose a [mighty] theme no great and</p>
+<p>———————– 40 ————————- i stand among these [mighty] leviathan skeletons skulls tusks</p>
+<p>———————– 41 ————————- mark thou high and [mighty] pilot thou tellest me</p>
+<p>———————– 42 ————————- listen what s the [mighty] difference between holding a</p>
+<p>———————– 43 ————————- long slow billows of [mighty] bulk and striving in</p>
+<p>———————– 44 ————————- the bottomless blue rushed [mighty] leviathans sword fish and</p>
+<p>———————– 45 ————————- a gentle joyousness a [mighty] mildness of repose in</p>
+<p>———————– 46 ————————- land and as the [mighty] iron leviathan of the</p>
+<p>———————– 47 ————————- almost simultaneously with a [mighty] volition of ungraduated instantaneous</p>
+<hr />
+<p>This is adapted from Matthew Jockers’s <a href="http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/"><em>Text Analysis in R for Students of Literature</em></a> (2014).</p>
 <p>Return to <a href="https://cmohge1.github.io/hacking-moby-dick/week_8_discussion.html">Week 8</a></p>
 </div>
 

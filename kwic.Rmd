@@ -110,7 +110,7 @@ my.corpus.l[[1]][last.death]
 cat(my.corpus.l[[1]] [(last.death-2):(last.death+2)])
 ```
 
-Now for the difficult part. Try putting in this code block into RStudio. You should be able to run your own key-word-search-in-context application.
+Now for the fun part. Copy and paste this code block into RStudio. You should be able to run your own key-word-search-in-context application.
 ```
 # This creates a function to take a list containing word vector # from text files and allows for interactive user input to produce KWIC lists 
 doitKwic <- function(named.text.word.vector.l){
@@ -154,9 +154,159 @@ show.files(names(named.text.word.vector.l))
     cat("YOUR KEYWORD WAS NOT FOUND\n")
   }
 }
+
 doitKwic(my.corpus.l)
 ```
+It will first ask for a file number. Since there is only one file number, enter '1'.
 
-This tutorial is adapted from Matthew Jockers's [*Text Analysis in R for Students of Literature*](http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/) (2014).
+It will then ask for how much context you would like. I enter '4'.
+
+Then, if we enter a term from our sentiment list, 'grand', the results are:
+
+----------------------- 1 -------------------------
+a sea ibid the [mighty] whales which swim in
+
+----------------------- 2 -------------------------
+whale boat suddenly a [mighty] mass emerged from the
+
+----------------------- 3 -------------------------
+euroclydon nevertheless is a [mighty] pleasant zephyr to any
+
+----------------------- 4 -------------------------
+good laugh is a [mighty] good thing and rather
+
+----------------------- 5 -------------------------
+smallest strands in the [mighty] cable of the scriptures
+
+----------------------- 6 -------------------------
+far rush of the [mighty] whale which even now
+
+----------------------- 7 -------------------------
+this struck me as [mighty] singular yet upon second
+
+----------------------- 8 -------------------------
+nation s census a [mighty] pageant creature formed for
+
+----------------------- 9 -------------------------
+bildad might have a [mighty] deal to say about
+
+----------------------- 10 -------------------------
+than the high and [mighty] business of whaling one
+
+----------------------- 11 -------------------------
+mother of that now [mighty] colony moreover in the
+
+----------------------- 12 -------------------------
+our leviathan who but [mighty] job and who composed
+
+----------------------- 13 -------------------------
+in one of the [mighty] triumphs given to a
+
+----------------------- 14 -------------------------
+of an enraged and [mighty] man but were the
+
+----------------------- 15 -------------------------
+who in all thy [mighty] earthly marchings ever cullest
+
+----------------------- 16 -------------------------
+overbearing dignity of some [mighty] woe ere long from
+
+----------------------- 17 -------------------------
+and there s a [mighty] difference between a living
+
+----------------------- 18 -------------------------
+a leech till the [mighty] brute is worried to
+
+----------------------- 19 -------------------------
+of the high and [mighty] cabin in strange contrast
+
+----------------------- 20 -------------------------
+for a parmacetty and [mighty] quick captain ahab and
+
+----------------------- 21 -------------------------
+pregnant with many a [mighty] birth no wonder then
+
+----------------------- 22 -------------------------
+and fearless as this [mighty] steed whether marching amid
+
+----------------------- 23 -------------------------
+to preserve all his [mighty] swells and undulations and
+
+----------------------- 24 -------------------------
+the assault yes a [mighty] change had come over
+
+----------------------- 25 -------------------------
+hoary with mosses speak [mighty] head and tell us
+
+----------------------- 26 -------------------------
+in thinking how this [mighty] monster is actually a
+
+----------------------- 27 -------------------------
+leviathan is of so [mighty] a magnitude all his
+
+----------------------- 28 -------------------------
+whale this high and [mighty] god like dignity inherent
+
+----------------------- 29 -------------------------
+all things that are [mighty] wears a false brow
+
+----------------------- 30 -------------------------
+his men in a [mighty] rage that was a
+
+----------------------- 31 -------------------------
+drawn off from some [mighty] fountain and with half
+
+----------------------- 32 -------------------------
+our conceit of the [mighty] misty monster to behold
+
+----------------------- 33 -------------------------
+more i consider this [mighty] tail the more do
+
+----------------------- 34 -------------------------
+dark valley between three [mighty] heaven abiding peaks that
+
+----------------------- 35 -------------------------
+hummed around him the [mighty] idler seemed the cunning
+
+----------------------- 36 -------------------------
+its length was the [mighty] circular basket of ribs
+
+----------------------- 37 -------------------------
+fossil whale from his [mighty] bulk the whale affords
+
+----------------------- 38 -------------------------
+bulk to produce a [mighty] book you must choose
+
+----------------------- 39 -------------------------
+you must choose a [mighty] theme no great and
+
+----------------------- 40 -------------------------
+i stand among these [mighty] leviathan skeletons skulls tusks
+
+----------------------- 41 -------------------------
+mark thou high and [mighty] pilot thou tellest me
+
+----------------------- 42 -------------------------
+listen what s the [mighty] difference between holding a
+
+----------------------- 43 -------------------------
+long slow billows of [mighty] bulk and striving in
+
+----------------------- 44 -------------------------
+the bottomless blue rushed [mighty] leviathans sword fish and
+
+----------------------- 45 -------------------------
+a gentle joyousness a [mighty] mildness of repose in
+
+----------------------- 46 -------------------------
+land and as the [mighty] iron leviathan of the
+
+----------------------- 47 -------------------------
+almost simultaneously with a [mighty] volition of ungraduated instantaneous
+
+
+----
+
+This is adapted from Matthew Jockers's [*Text Analysis in R for Students of Literature*](http://www.matthewjockers.net/text-analysis-with-r-for-students-of-literature/) (2014).
 
 Return to [Week 8](https://cmohge1.github.io/hacking-moby-dick/week_8_discussion.html)
